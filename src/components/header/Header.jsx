@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import Button from "../button/Button.jsx";
+import Button from '../button/Button.jsx';
 import classNames from "classnames";
 
 function Header({isHiglighted}) {

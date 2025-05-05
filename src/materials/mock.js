@@ -18,6 +18,24 @@ const restaurants = [
         ],
     },
     {
+        id: "873284f37f3y7vcy3c3f334f",
+        name: "With Love",
+        menu: [
+            {
+                id: "123jhb12b234bh13hb",
+                name: "Fish",
+                price: 12,
+                ingredients: ["chicken", "rice"]
+            },
+            {
+                id: "8d8dfvs76v65s65s6vs",
+                name: "Creps",
+                price: 22,
+                ingredients: ["Beef", "beer"]
+            },
+        ],
+    },
+    {
         id: "45t43jnk5kgnj4kn5jgjnk445",
         name: "Paris",
         menu: [
