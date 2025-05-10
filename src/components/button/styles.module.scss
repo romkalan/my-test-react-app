@@ -4,8 +4,13 @@
   box-shadow: 0px 2px 4px black;
 }
 
+.root:disabled {
+  background-color: #da8080;
+  color: #05059a;
+}
+
 .s {
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .m {

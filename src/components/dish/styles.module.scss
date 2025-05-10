@@ -1,18 +1,19 @@
 .root {
-  color: black;
-}
-
-.positionOfButtons {
-  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  width: 270px;
+  margin-bottom: 5px;
+}
+
+.boxOfButtons {
+  display: flex;
+  justify-content: space-between;
   width: 100px;
+  align-items: center;
 }
 
-.menuPosition {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 300px;
+.buttonSize {
+  width: 30px;
+  margin: 0 5px;
+  padding: 3px;
 }
