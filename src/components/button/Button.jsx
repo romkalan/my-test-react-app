@@ -8,9 +8,11 @@ const SizeClass = {
     [Size.l]: styles.l,
 }
 
-function Button({children, onClick, className, size = Size.m}) {
+function Button({children, onClick, className, size = Size.m, isDisabled = false}) {
     return (
-        <button className={classNames(className, styles.root, SizeClass[size])} onClick={onClick}>
+        <button disabled={isDisabled}
+                className={classNames(className, styles.root, SizeClass[size])}
+                onClick={onClick}>
             {children}
         </button>
     );

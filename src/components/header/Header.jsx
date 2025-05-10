@@ -6,7 +6,7 @@ import Size from "../../constants/Size.js";
 function Header({isHiglighted}) {
     return (
         <header className={classNames(styles.root, {[styles.higlighted]: isHiglighted})}>
-            <div>Header</div>
+            <h1>Header</h1>
             <Button size={Size.l} className={styles.pageLink} onClick={() => console.log('Hello')}>Menu</Button>
             <Button className={styles.pageLink} onClick={() => console.log('Bye')}>Sign in</Button>
         </header>

@@ -1,11 +1,10 @@
 import Layout from "./components/layout/Layout.jsx";
-import Restaurants from "./components/restaurants/Restaurants.jsx";
-import restaurants from "./materials/mock.js";
+import RestaurantPage from "./pages/RestaurantPage.jsx";
 
 function App() {
     return (
         <Layout>
-            <Restaurants restaurants={restaurants}/>
+            <RestaurantPage/>
         </Layout>
     );
 }
