@@ -4,10 +4,14 @@ import classNames from "classnames";
 import Size from "../../constants/Size.js";
 
 function Header({isHiglighted}) {
+    const greeting = () => {
+        console.log('Hello');
+    }
+
     return (
         <header className={classNames(styles.root, {[styles.higlighted]: isHiglighted})}>
             <h1>Header</h1>
-            <Button size={Size.l} className={styles.pageLink} onClick={() => console.log('Hello')}>Menu</Button>
+            <Button size={Size.l} className={styles.pageLink} onClick={greeting}>Menu</Button>
             <Button className={styles.pageLink} onClick={() => console.log('Bye')}>Sign in</Button>
         </header>
     );
