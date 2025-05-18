@@ -14,11 +14,13 @@ function Button({children, onClick, className, size = Size.m, isDisabled = false
     const theme = useContext(ThemeContext);
 
     return (
-        <button disabled={isDisabled}
-                className={classNames(className, styles.root, SizeClass[size], styles[theme])}
-                onClick={onClick}>
-            {children}
-        </button>
+        <div>
+            <button disabled={isDisabled}
+                    className={classNames(className, styles.root, SizeClass[size], styles[theme])}
+                    onClick={onClick}>
+                {children}
+            </button>
+        </div>
     );
 }
 
