@@ -1,18 +1,21 @@
 import {useState} from "react";
-import restaurants from "../materials/mock.js";
 import Tabs from "../components/tabs/Tabs.jsx";
 import Restaurant from "../components/restaurant/Restaurant.jsx";
+import {useSelector} from "react-redux";
+import {selectRestaurantModule} from "../redux/entities/restaurant/selectors.js";
 
 function RestaurantPage() {
+    const restaurants = useSelector(selectRestaurantModule);
+
     const [activeRestaurantId, setActiveRestaurantId] = useState();
-    const activeRestaurant = restaurants.find(
-        ({id}) => id === activeRestaurantId
+    const restaurantId = restaurants.ids.find(
+        (id) => id === activeRestaurantId
     );
 
     return (
         <div>
-            <Tabs items={restaurants} onChange={setActiveRestaurantId}/>
-            {activeRestaurant && <Restaurant name={activeRestaurant.name} menu={activeRestaurant.menu}/>}
+            <Tabs onChange={setActiveRestaurantId}/>
+            {restaurantId && <Restaurant id={restaurantId}/>}
         </div>
     );
 }

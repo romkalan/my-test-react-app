@@ -4,6 +4,8 @@ import ThemeContext from "./contexts/theme.js";
 import UserContext from "./contexts/user.js";
 import {useState} from "react";
 import Button from "./components/button/Button.jsx";
+import {Provider} from "react-redux";
+import store from "./redux/index.js";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -11,17 +13,19 @@ function App() {
     const changeTheme = () => theme === 'default' ? 'darkTheme' : 'default';
 
     return (
-        <UserContext.Provider value={{user, setUser}}>
-            <ThemeContext.Provider value={theme}>
-                <Layout>
-                    <Button size={'l'} isDisabled={false}
-                            onClick={() => setTheme(changeTheme)}
-                            children={'Change Theme'}
-                    />
-                    <RestaurantPage/>
-                </Layout>
-            </ThemeContext.Provider>
-        </UserContext.Provider>
+        <Provider store={store}>
+            <UserContext.Provider value={{user, setUser}}>
+                <ThemeContext.Provider value={theme}>
+                    <Layout>
+                        <Button size={'l'} isDisabled={false}
+                                onClick={() => setTheme(changeTheme)}
+                                children={'Change Theme'}
+                        />
+                        <RestaurantPage/>
+                    </Layout>
+                </ThemeContext.Provider>
+            </UserContext.Provider>
+        </Provider>
     );
 }
 
