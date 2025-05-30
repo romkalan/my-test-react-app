@@ -3,8 +3,11 @@ import Size from "../../constants/Size.js";
 import {useState} from "react";
 import classNames from "classnames";
 import styles from './styles.module.scss';
+import {useSelector} from "react-redux";
+import {selectDish} from "../../redux/entities/dishes/selectors.js";
 
-function Dish({dish}) {
+function Dish({id}) {
+    const dish = useSelector((state) => selectDish(state, id))
     const [value, setValue] = useState(0);
     const styleOfValue = value === 0 ? styles.disabledButton : styles.standardButton;
 

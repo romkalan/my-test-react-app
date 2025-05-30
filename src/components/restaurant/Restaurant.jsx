@@ -3,20 +3,23 @@ import classNames from "classnames";
 import Menu from "../Menu/Menu.jsx";
 import {useContext} from "react";
 import UserContext from "../../contexts/user.js";
+import {useSelector} from "react-redux";
+import {selectRastaurant} from "../../redux/entities/restaurant/selectors.js";
 
-function Restaurant({name, menu}) {
+function Restaurant({id}) {
+    const restaurant = useSelector((state) => selectRastaurant(state, id))
     const {user} = useContext(UserContext);
 
     if (!user) return null;
 
     return (
         <div className={classNames(styles.root)}>
-            <h2>{name}</h2>
+            <h2>{restaurant.name}</h2>
             <div className={classNames(styles.menuPosition)}>
                 <p>Menu of the Restaurant</p>
                 <p>Change count</p>
             </div>
-            <Menu menu={menu}/>
+            <Menu menu={restaurant.menu} />
         </div>
     );
 }

@@ -1,10 +1,16 @@
 import Dish from "../dish/Dish.jsx";
+import {useSelector} from "react-redux";
+import {selectDishIds} from "../../redux/entities/dishes/selectors.js";
 
 function Menu({menu}) {
-    const menuList = menu && menu.map((dish) => {
+    const dishIds = useSelector(selectDishIds);
+
+    const dishesListIds = dishIds.filter((dishId) => menu.includes(dishId));
+
+    const menuList = dishesListIds && dishesListIds.map((id, index) => {
         return (
-            <li key={dish.id}>
-                <Dish dish={dish} />
+            <li key={index}>
+                <Dish id={id} />
             </li>
         );
     })

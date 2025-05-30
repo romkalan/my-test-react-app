@@ -1,7 +1,12 @@
-function Tab({title, onClick}) {
+import {useSelector} from "react-redux";
+import {selectRastaurant} from "../../redux/entities/restaurant/selectors.js";
+
+function Tab({id, onClick}) {
+    const restaurant = useSelector((state) => selectRastaurant(state, id));
+
     return (
-      <div>
-          <button onClick={onClick}>{title}</button>
+      <div style={{padding: "15px"}}>
+          <button onClick={onClick}>{restaurant.name}</button>
       </div>
     );
 }
