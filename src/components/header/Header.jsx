@@ -5,6 +5,8 @@ import Size from "../../constants/Size.js";
 import {useContext, useState} from "react";
 import UserContext from "../../contexts/user.js";
 import Modal from "../modal/Modal.jsx";
+import CartButton from "../cartButton/CartButton.jsx";
+import CartButtonContainer from "../cartButton/CartButtonContainer.jsx";
 
 function Header({isHiglighted}) {
     const {user} = useContext(UserContext);
@@ -21,6 +23,7 @@ function Header({isHiglighted}) {
                 onClick={() => setIsOpen(true)}
             />
             <Modal isOpen={isOpen} children={"Модальное окно"} onClose={() => setIsOpen(false)}/>
+            <CartButtonContainer />
         </header>
     );
 }
