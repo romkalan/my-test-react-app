@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 function CartButton({amount}) {
     const [coordinates, setCoordinates] = useState(null);
-    const buttonRef = useRef();
+    const buttonRef = useRef(null);
 
     const openCart = () => {
         if (coordinates) {
@@ -15,12 +15,12 @@ function CartButton({amount}) {
         }
         const {bottom, left} = buttonRef.current.getBoundingClientRect();
         setCoordinates({left: left, top: bottom});
-    }
+    };
 
     return (
         <div className={classNames(styles.root)}>
             <button ref={buttonRef} onClick={openCart}>
-                <h2>Cart</h2>
+                <p style={{width: "50px", textAlign: "center"}}>{amount}</p>
             </button>
             {coordinates && createPortal(
                 <div style={{left: coordinates.left, top: coordinates.top}} className={classNames(styles.modal)}>

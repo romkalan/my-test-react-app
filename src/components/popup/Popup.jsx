@@ -1,4 +1,4 @@
-function Popup({children}) {
+function Popup() {
     return (
         <div>
 

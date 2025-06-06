@@ -20,7 +20,7 @@ const cartSlice = createSlice({
             return state[productId] || 0;
         },
         selectProductAmount: (state) => {
-            Object.values(state).reduce((acc, amount) => {
+            return Object.values(state).reduce((acc, amount) => {
                 return acc + amount;
             }, 0);
         },
