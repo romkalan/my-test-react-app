@@ -1,5 +1,8 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createEntityAdapter, createSlice} from "@reduxjs/toolkit";
 import {normalizedRestaurants} from "../../../mock/mock-norm.js";
+import getRestaurants from "../../thunks/get-restaurants.js";
+
+const entityAdapter = createEntityAdapter();
 
 const restaurantSlice = createSlice({
     name: "restaurant",
@@ -11,6 +14,11 @@ const restaurantSlice = createSlice({
         }, {}),
         ids: normalizedRestaurants.map(({id}) => id),
     },
+    extraReducers: (builder) =>
+        builder
+            .addCase(getRestaurants.fulfilled, (state, {payload}) => {
+
+            })
 });
 
 export default restaurantSlice;
