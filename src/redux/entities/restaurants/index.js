@@ -14,11 +14,16 @@ const restaurantSlice = createSlice({
         }, {}),
         ids: normalizedRestaurants.map(({id}) => id),
     },
+    selectors: {
+        selectRestaurants: (state, payload) => state.ids,
+        selectRestaurantMenuById: (state, payload) => state.menu,
+    },
     extraReducers: (builder) =>
         builder
             .addCase(getRestaurants.fulfilled, (state, {payload}) => {
-
+                entityAdapter.setAll(state, payload);
             })
 });
 
 export default restaurantSlice;
+export const {selectRestaurants, selectRestaurantMenuById} = restaurantSlice.selectors;

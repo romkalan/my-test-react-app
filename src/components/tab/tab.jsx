@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {selectRastaurant} from "../../redux/entities/restaurant/selectors.js";
+import {selectRastaurant} from "../../redux/entities/restaurants/selectors.js";
 
 function Tab({id, onClick}) {
     const restaurant = useSelector((state) => selectRastaurant(state, id));
